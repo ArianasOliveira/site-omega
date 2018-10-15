@@ -1,0 +1,334 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu');
+
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Criando regras usando o fluxo de trabalho
+MOBILE FIRST 
+
+Todas as regras que iremos criar a partir deste ponto
+serão voltadas ao site visualizado em telas mobile/pequenas. 
+
+Posteriormente, criaremos Media Queries com somente os ajustes necessários para exibição do site em telas
+médias e grandes. 
+
+Obs.: regras criadas nesta abordagem, também serão válidas para o site como um todo, ou seja, independentemente do tamanho de tela onde está sendo exibido. */
+
+/* Regra para o corpo do site 
+Definimos um padrão de fonte e uma 
+imagem de fundo fixa */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../img/hypnotize.png);
+    background-attachment: fixed;
+}
+
+/* Regra para títulos, subtítulos e parágrafos
+(Reset customizado)
+Removemos espaçamentos destes elementos */
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Regra para todas as imagens
+Definimos que todas elas serão flexíveis.
+
+Obs: usando max-width: 100% a imagem aumentará
+até o tamanho máximo dela, sem risco de distorção
+ou perda de qualidade. */
+img { max-width: 100%; }
+
+
+/* Regras para o topo (header) e
+rodape (footer)
+Definimos uma cor de plano de fundo com
+ transparência */
+#topo, #rodape { /* ou header, footer */
+    background-color: rgba(245, 245, 245, 0.8);
+}
+
+
+/* Regra somente para o topo 
+Definimos uma borda inferior, alinhamos
+o conteúdo interno ao centro, e criamos um 
+espaço externo para baixo. */
+#topo {
+    border-bottom: solid 1px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+h1 img {
+    margin-top: 5px;
+}
+
+/* Regras para a área do menu */
+nav {
+    min-height: 40px;
+
+    /* Ativamos o modo flex
+    e com isso podemos alinhar horizontal
+    e verticalmente o conteúdo do nav */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Regras para os links do menu */
+nav a:link, nav a:visited {
+    text-decoration: none;
+    color: black;
+    transition: background-color 1s;
+    
+    /* Recebendo por herança a altura-mínima
+    a partir do elemento pai (neste caso, do nav) */
+    min-height: inherit;
+
+    /* Ativamos o modo flex, com isso foi possível:
+    alinhar verticalmente e horizontal cada um
+    dos links */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Definimos uma largura padrão para cada link */
+    width: 23%;
+}
+
+nav a:hover, nav a:focus {
+    background-color: black;
+    color: white;
+}
+
+
+/* Regra para o rodapé */
+#rodape {
+    border-top: solid 1px;
+    padding: 1%;
+    text-align: center;
+}
+
+/* Regra para a área de conteúdo principal 
+Definimos uma largura máxima pouco menor do que
+a tela toda, e centralizamos com margem automática. */
+#conteudo {
+    max-width: 95%;
+    margin: auto;
+}
+
+/* Regra para os articles contidos em #conteudo */
+#conteudo article {
+    background-color: white;
+    margin: 15px 0;
+    padding: 1%;
+    box-shadow: grey 1px 1px 5px;
+}
+
+/* Regra para subtítulos e parágrafos do #conteudo */
+#conteudo h2, #conteudo h3, #conteudo p {
+    padding: 1% 0;
+}
+
+/* Regra para o parágrafo do #rodape */
+#rodape p { font-size: 14px; }
+
+/* Regra para o aside (redes sociais) do #rodape */
+#rodape aside { margin: 15px 0; }
+
+/* Regra para as imagens contidas no #rodape */
+#rodape img {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+/* Segunda parte: continuação do CSS */
+
+
+/* Regra para SOMENTE para o primeiro figure
+(depende do contexto, ou seja, depende da onde os 
+figures estão localizados (no nosso caso, dentro 
+de uma DIV auxiliar) */
+/*figure:first-child {
+    margin-top: 10px;
+}*/
+
+
+/* Regras para o formulário */
+#form-contato {
+    margin: auto;
+    max-width: 700px;
+    width: 95%;
+}
+
+/* 1a forma: usando seletores ID */
+/* #nome, #email, #telefone, #assunto, #mensagem {
+    border: solid 2px black;
+} */
+
+/* 2a forma: usando seletores TAG */
+#form-contato input, #form-contato textarea {
+    border: solid 2px black;
+}
+
+/* Regra para os campos input 
+(nome, email, telefone, assunto) */
+#form-contato input {
+    height: 50px;
+    padding: 2%;
+    width: 100%;
+}
+
+/* Regra somente para o campo textarea 
+(mensagem) */
+#form-contato textarea {
+    width: 100%;
+    padding: 2%;
+}
+
+/* Regra para o label (rótulo dos campos) */
+#form-contato label { font-weight: bold; }
+
+/* Regras para o botão */
+#form-contato button {
+    border: none;
+    padding: 2%;
+    background-color: black;
+    color: white;
+}
+
+#form-contato button:hover, 
+#form-contato button:focus {
+    background-color: darkblue;
+    cursor: pointer; /* cursor mãozinha */
+}
+
+#galeria figure { 
+    margin: 1%; 
+    position: relative;
+}
+
+
+#galeria figcaption {
+    position: absolute;
+    left: 0; bottom: 20px;
+    z-index: 1000;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+#galeria a img { 
+    transition: 1s;
+    filter: opacity(0.5);
+}
+
+#galeria a:hover img, #galeria a:focus img {
+    filter: opacity(1);
+}
+
+#galeria{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+/* 3a parte: media queries 
+Regras com ajustes para a visualização do site/conteúdo em tamanhos de tela maiores (breakpoints) */
+
+/* 1º Breakpoint
+Media Querie para telas a partir de 700px */
+@media screen and (min-width: 700px){
+    #topo {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 60px;
+        z-index: 1000;
+    }
+
+    #topo div {
+        display: flex;
+        justify-content: center; 
+        align-items: center;  
+    }
+
+    h1 {
+        margin-left: 3%;
+        margin-top: 5px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    #conteudo { 
+        margin-top: 70px;
+    }
+
+   
+
+    #servicos {
+        display: flex;
+        margin: 30px 0;
+        align-items: flex-start;
+    }
+
+    #servicos section {
+        width: 30%;
+        margin: auto;
+        min-height: 320px;
+    }
+
+} /* Fim do 1º Breakpoint (>=700px) */
+
+
+/* 2º Breakpoint 
+Media Querie para telas a partir de 850px (ou 915px) */
+@media screen and (min-width: 850px){
+    figcaption {
+        max-width: 850px;
+        margin: auto; 
+    }
+}
+
+/* 3º breakpoint 
+Media Querie para telas a partir de 1000px */
+@media screen and (min-width: 1000px){
+    body { font-size: 20px; }
+
+    #topo { height: 70px; }
+
+    #topo div {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    h1 {
+        margin-top: 8px;
+        margin-left: 0;
+    }
+
+    nav { justify-content: flex-end; }
+
+    #conteudo {
+        max-width: 1000px;
+        margin-top: 80px;
+    }
+
+    #servicos section {
+        min-height: 400px;
+    }
+}
+

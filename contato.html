@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contato - Ômega | Design e Tecnologia</title>
+
+    <meta name="description" content="Caso tenha dúvidas ou precise de qualquer informação, entre em contato conosco.">
+
+    <link rel="icon" href="img/favicon.png" sizes="64x64">
+    <link rel="stylesheet" href="css/normalize.css"> 
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="topo">
+        <div>
+            <h1>
+                <a href="index.html" tabindex="-1">
+                    <img src="img/Logo.svg" alt="Logo com símbolo Ômega">
+                </a>
+            </h1>
+
+            <nav>
+                <a href="index.html" tabindex="1">Home</a>
+                <a href="o-que-fazemos.html" tabindex="2">O que fazemos</a>
+                <a href="nossa-equipe.html" tabindex="3">Nossa equipe</a>
+                <a href="contato.html" tabindex="4">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <article>
+            <h2>Contato </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, voluptatem? Vero, a reprehenderit sapiente delectus id, voluptas exercitationem et nobis fuga maxime voluptatem optio facilis non tenetur necessitatibus eveniet eaque!</p>
+
+            <!-- Para o exemplo de PHP Básico -->
+            <form action="enviar-email.php" id="form-contato" method="POST">
+                <!-- p>label+input#nome -->
+                <p>
+                    <label for="nome">Nome:</label>
+                    <input tabindex="5" required type="text" id="nome" name="nome">
+                </p>
+
+                <p>
+                    <label for="email">E-mail:</label>
+                    <input tabindex="6" required type="email" id="email" name="email">
+                </p>
+
+                <p>
+                    <label for="telefone">Telefone:</label>
+                    <input tabindex="7" type="tel" id="telefone" name="telefone">
+                </p>
+
+                <p>
+                    <label for="assunto">Assunto:</label>
+                    <input tabindex="8" required type="text" id="assunto" name="assunto">
+                </p>
+
+                <p>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea tabindex="9" name="mensagem" id="mensagem" cols="50" rows="6"></textarea>
+                </p>
+                <button tabindex="11" id="limpar" name="limpar" type="reset">Limpar campos</button>
+                <button tabindex="10" id="enviar" name="enviar">Enviar dados</button>
+            </form>
+
+        </article>
+    </main>
+
+    <footer id="rodape">
+        <aside>
+            <a href=""><img src="img/facebook.png" alt="Facebook"></a>
+            <a href=""><img src="img/instagram.png" alt="Instagram"></a>
+            <a href=""><img src="img/linkedin.png" alt="LinkedIn"></a>
+            <a href=""><img src="img/twitter.png" alt="Twitter"></a>
+            <a href=""><img src="img/youtube.png" alt="Youtube"></a>
+        </aside>
+        <p>Desenvolvido por <b>SEU NOME</b> &copy; 2018</p>
+    </footer>
+</body>
+</html>
